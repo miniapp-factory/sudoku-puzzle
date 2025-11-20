@@ -23,7 +23,7 @@ export default function Leaderboard() {
         {["Easy", "Medium", "Hard"].map(level => (
           <li key={level}>
             {level}: {bestTimes[level as keyof BestTimes] !== undefined
-              ? `${Math.floor(bestTimes[level as keyof BestTimes] / 60)}m ${bestTimes[level as keyof BestTimes] % 60}s`
+              ? `${Math.floor((bestTimes[level as keyof BestTimes] ?? 0) / 60)}m ${(bestTimes[level as keyof BestTimes] ?? 0) % 60}s`
               : "N/A"}
           </li>
         ))}
